@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conselho da Cigana</title>
+  <style>
+    body {
+      background-image: url('https://th.bing.com/th/id/OIG2.6vVJqoCvpjK4.Yyt0TRC?dpr=2&pid=ImgDetMain&PC=EMMX01');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      overflow-x: hidden;
+      color: white;
+    }
+    /* Estrelas */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% {
+        opacity: 1;
+      }
+      25%, 75% {
+        opacity: 0;
+      }
+    }
+    /* Botão */
+    .button {
+      display: block;
+      width: 200px;
+      margin: 50px auto;
+      padding: 15px;
+      background-color: white;
+      color: red;
+      text-align: center;
+      font-size: 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    /* Texto do conselho */
+    #advice {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para melhorar legibilidade */
+      color: white;
+      font-size: 18px;
+      padding: 20px;
+      max-height: 70vh;
+      overflow-y: auto;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    /* Barra de rolagem personalizada */
+    #advice::-webkit-scrollbar {
+      width: 12px;
+    }
+    #advice::-webkit-scrollbar-track {
+      background: #f1f1f1; 
+    }
+    #advice::-webkit-scrollbar-thumb {
+      background: #888; 
+    }
+    #advice::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Contêiner das estrelas -->
+  <div id="stars"></div>
+  <!-- Frase conselho da cigana -->
+  <h1 style="text-align:center;">Conselho da Cigana</h1>
+  <!-- Botão -->
+  <a href="#" class="button" onclick="showAdvice()">Clique aqui</a>
+  <!-- Texto do conselho -->
+  <div id="advice">
+    <p>
+      Minha filha, escuta bem o que te digo. Nem tudo que é pequeno pode ser ignorado, às vezes o mal se esconde nos cantos, nas coisas miúdas, mas o estrago que ele faz pode ser grande. Olha ao teu redor, tem algo, ou até alguém, sugando tuas forças aos poucos, se aproveitando sem que tu perceba. Pode ser uma situação, pode ser uma pessoa, ou até mesmo um hábito teu que tá te roubando aos pouquinhos, sem tu notar.
+    </p>
+    <p>
+      Tu tem que abrir os olhos, cuidar do que anda escapando do teu controle. O perigo muitas vezes se disfarça de rotina, de coisa boba, mas o estrago que ele deixa é grande. Não se deixa levar, toma as rédeas da situação, porque o mal, quando ignorado, cresce e te consome por inteiro. É hora de limpar o caminho, cortar o que te pesa, o que te esgota. Só assim tua energia vai voltar a fluir do jeito certo.
+    </p>
+  </div>
+  <script>
+    // Função para gerar estrelas
+    function generateStars() {
+      const numStars = 100;
+      const starsContainer = document.getElementById('stars');
+      for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 2 + 's';
+        starsContainer.appendChild(star);
+      }
+    }
+    // Função para mostrar o conselho e trocar a imagem de fundo
+    function showAdvice() {
+      const adviceDiv = document.getElementById('advice');
+      adviceDiv.style.display = 'block';
+      document.body.style.backgroundImage = "url('https://th.bing.com/th/id/OIG4.jQK2hCOhl.qzPtUrEOFf?dpr=2&pid=ImgDetMain&PC=EMMX01')";
+    }
+    // Gerar estrelas ao carregar a página
+    generateStars();
+  </script>
+</body>
+</html>
